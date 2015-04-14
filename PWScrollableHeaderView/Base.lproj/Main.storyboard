@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tX6-o6-rje">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="xWU-1I-Uqb">
+            <objects>
+                <collectionViewController id="tX6-o6-rje" customClass="ViewController" customModule="PWScrollableHeaderView" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="C6p-Qg-TPT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JFN-4y-CGj" customClass="PWLayout" customModule="PWScrollableHeaderView" customModuleProvider="target">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="50" height="180"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="hVE-l4-Jfs">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Header" id="tk6-aZ-i35" customClass="PWReuseableHeaderView" customModule="PWScrollableHeaderView" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="105"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snd2" translatesAutoresizingMaskIntoConstraints="NO" id="kcU-hh-ms5">
+                                    <rect key="frame" x="0.0" y="-210" width="600" height="600"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="kcU-hh-ms5" secondAttribute="height" multiplier="1:1" id="3QE-wn-RZr"/>
+                                        <constraint firstAttribute="height" constant="600" id="GpP-su-HBr"/>
+                                    </constraints>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dh" translatesAutoresizingMaskIntoConstraints="NO" id="suX-RH-q1U">
+                                    <rect key="frame" x="490" y="60" width="60" height="60"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="suX-RH-q1U" secondAttribute="height" multiplier="1:1" id="JG5-jq-dfJ"/>
+                                        <constraint firstAttribute="height" constant="60" id="pk1-Re-CmY"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="centerY" secondItem="kcU-hh-ms5" secondAttribute="centerY" id="8d3-90-iIN"/>
+                                <constraint firstAttribute="centerY" secondItem="suX-RH-q1U" secondAttribute="centerY" id="A7w-sP-EEd"/>
+                                <constraint firstAttribute="trailing" secondItem="suX-RH-q1U" secondAttribute="trailing" constant="50" id="Ko5-Ik-x4s"/>
+                                <constraint firstAttribute="centerX" secondItem="kcU-hh-ms5" secondAttribute="centerX" id="eCP-TF-QLF"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="backgroundView" destination="kcU-hh-ms5" id="MLo-ks-SlZ"/>
+                                <outlet property="backgroundViewHeightConstraint" destination="GpP-su-HBr" id="gzR-kk-waW"/>
+                                <outlet property="logoHeightConstraint" destination="pk1-Re-CmY" id="5XL-Zc-xJy"/>
+                                <outlet property="logoView" destination="suX-RH-q1U" id="s9b-pZ-HNQ"/>
+                            </connections>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="tX6-o6-rje" id="mgw-Fs-V9i"/>
+                            <outlet property="delegate" destination="tX6-o6-rje" id="xu3-qL-bZk"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JYV-aT-QVL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="270" y="311"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dh" width="480" height="300"/>
+        <image name="snd2" width="451" height="300"/>
+    </resources>
+</document>
